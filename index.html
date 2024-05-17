@@ -1,1 +1,33 @@
-<!DOCTYPE html> <html> <head> <title>Sample Index Page</title> </head> <body> <h1>Welcome to the Sample Index Page</h1> <h2>Brand Logos</h2> <ul> <li><img src="logo1.png" alt="Brand Logo 1"></li> <li><img src="logo2.png" alt="Brand Logo 2"></li> <li><img src="logo3.png" alt="Brand Logo 3"></li> <li><img src="logo4.png" alt="Brand Logo 4"></li> <li><img src="logo5.png" alt="Brand Logo 5"></li> <li><img src="logo6.png" alt="Brand Logo 6"></li> <li><img src="logo7.png" alt="Brand Logo 7"></li> <li><img src="logo8.png" alt="Brand Logo 8"></li> <li><img src="logo9.png" alt="Brand Logo 9"></li> <li><img src="logo10.png" alt="Brand Logo 10"></li> </ul> <h2>Keywords</h2> <ul> <li>branding</li> <li>marketing</li> <li>products</li> <li>services</li> <li>innovation</li> <li>quality</li> <li>customer satisfaction</li> <li>reliability</li> <li>trust</li> <li>excellence</li> </ul> </body> </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Login</title>
+</head>
+<body>
+  <h1>Facebook Login</h1>
+  
+  <script>
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+
+    function statusChangeCallback(response) {
+      if (response.status === 'connected') {
+        // User is logged in and authorized
+        console.log('Logged in and authorized');
+      } else {
+        // User is either not logged in to Facebook or not authorized the app
+        console.log('Not logged in or not authorized');
+      }
+    }
+  </script>
+  
+  <!-- Load the Facebook SDK asynchronously -->
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=YOUR_APP_ID&autoLogAppEvents=1" nonce="YOUR_NONCE_VALUE"></script>
+  
+  <!-- Facebook login button -->
+  <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState()"></div>
+</body>
+</html>
