@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Facebook Login</title>
+  <title>Google Search</title>
 </head>
 <body>
-  <h1>Facebook Login</h1>
+  <h1>Google Search</h1>
   
-  <script>
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
-
-    function statusChangeCallback(response) {
-      if (response.status === 'connected') {
-        // User is logged in and authorized
-        console.log('Logged in and authorized');
-      } else {
-        // User is either not logged in to Facebook or not authorized the app
-        console.log('Not logged in or not authorized');
-      }
-    }
-  </script>
-  
-  <!-- Load the Facebook SDK asynchronously -->
-  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=YOUR_APP_ID&autoLogAppEvents=1" nonce="YOUR_NONCE_VALUE"></script>
-  
-  <!-- Facebook login button -->
-  <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState()"></div>
+  <form action="https://www.google.com/search" method="GET">
+    <input type="text" name="q" placeholder="Search..." />
+    <input type="submit" value="Search" />
+  </form>
 </body>
 </html>
